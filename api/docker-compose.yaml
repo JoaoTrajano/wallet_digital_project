@@ -1,0 +1,16 @@
+version: '3.9'
+services:
+  postgres:
+    image: postgres:15
+    container_name: postgres_financial_portfolio
+    volumes:
+      - db:/var/lib/postgres
+    ports:
+      - '5432:5432'
+    restart: always
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: 123456
+      POSTGRES_DB: financial_portfolio
+volumes:
+  db:
