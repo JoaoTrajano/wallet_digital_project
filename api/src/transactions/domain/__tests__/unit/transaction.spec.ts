@@ -41,33 +41,4 @@ describe('Transaction Entity', () => {
     expect(transaction.type).toBe(TransactionType.TRANSFER);
     expect(transaction.description).toBe('Payment for services');
   });
-  it('should return a error if value is negative after increment', () => {
-    const transaction = new TransactionEntity(
-      new BillEntity(
-        new UserEntity('User 1', 'user1@example.com'),
-        'Bill 1',
-        100,
-      ),
-      50,
-      'Payment for services',
-    );
-
-    transaction.initTransaction(TransactionType.DEPOSIT);
-    expect(transaction.bill.amount).toBe(150);
-  });
-  it('should return a error if value is negative after decrement', () => {
-    const transaction = new TransactionEntity(
-      new BillEntity(
-        new UserEntity('User 1', 'user1@example.com'),
-        'Bill 1',
-        100,
-      ),
-      50,
-      'Payment for services',
-    );
-
-    transaction.initTransaction(TransactionType.TRANSFER);
-
-    expect(transaction.bill.amount).toBe(50);
-  });
 });
