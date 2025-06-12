@@ -1,6 +1,6 @@
 # Digital wallet API
 
-Este projeto está estruturado por duas pastas: web e api.
+Este projeto está estruturado por duas pastas: fronted e api.
 
 ## Versão do Node.js
 
